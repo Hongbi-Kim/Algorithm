@@ -4,8 +4,32 @@ Created on Sun Jan 16 01:38:18 2022
 
 @author: khb16
 """
+# 문제2 : 위에서 아래로
+n = int(input())
 
-# 문제3
+# N개의 정수를 입력받아 리스트에 저장
+array = []
+for i in range(n):
+    array.append(int(input()))
+# 파이썬 기본 정렬 라이브러리를 이용하여 정렬 수행
+array = sorted(array, reverse = True)
+
+# 정렬이 수행된 결과를 출력
+for i in array:
+    print(i, end = ' ')
+
+'''
+3
+
+15
+
+27
+
+12
+27 15 12 
+'''
+
+# 문제3 : 성적이 낮은 순서로 학생 출력하기
 n = int(input())
 
 array = []
