@@ -56,10 +56,60 @@ print(result)
 
 # 3
 # 문자열 뒤집기
+# 전부 0으로 바꾸는 경우와 전부 1로 바꾼는 경우 중에서 더 적은 횟수를 가지는 경우 계산
 
+data = input()
+count0 = 0 # 전부 0으로 바꾸는 경우
+count1 = 0 # 전부 1로 바꾸는 경우
 
+# 첫 번째 원소에 대해서 처리
+if data[0] == '1':
+    count0 += 1
+else:
+    count1 += 1
+    
+# 두 번째 원소부터 모든 원소를 확인하며
+for i in range(len(data)-1):
+    if data[i] != data[i+1]:
+        # 다음 수에서 1로 바뀌는 경우
+        if data[i+1] == '1':
+            count0 += 1
+        # 다음 수에서 0으로 바뀌는 경우
+        else:
+            count1 += 1
+print(min(count0, count1))
 
+'''
+0001100
+1
+'''
 
+# --------------------------------------------------------------------
+
+# 4
+# 만들 수 없는 금액
+# 만들 수 없는 양의 정수 금액 중 최솟값
+
+n = int(input())
+data = list(map(int, input().split()))
+data.sort()
+
+target = 1
+for x in data:
+    # 만들 수 없는 금액을 찾았을 때 반복 종료
+    if target < x:
+        break
+    target += x
+
+# 만들 수 없는 금액 출력
+print(target)
+
+'''
+5
+
+3 2 1 1 9
+8
+'''
 
 
 
