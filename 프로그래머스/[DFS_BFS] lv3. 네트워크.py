@@ -11,6 +11,12 @@ Created on Thu Jul  7 22:43:53 2022
 computers = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
 n = 3
 
+for a, b in enumerate(computers[0]):
+    print(a, b)
+# 0 1
+# 1 1
+# 2 0
+
 def dfs(x, computers, visited):
     visited[x] = True    # x노드 방문 처리
     for a, b in enumerate(computers[x]):
@@ -28,4 +34,5 @@ def solution(n, computers):
             
     return cnt
 
+solution(n, computers)
 # 2
